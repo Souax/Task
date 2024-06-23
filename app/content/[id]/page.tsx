@@ -78,8 +78,8 @@ const MemoPage = ({ params }: { params: { id: string } }) => {
           />
         ) : (
           <>
-            <div className="shadow rounded-[8px] w-[88%] h-[90vh] py-[30px] px-[30px] text-black bg-[#FFFFFF] leading-tight focus:outline-none">
-              <p>{detailMemo.body}</p>
+            <div className="shadow rounded-[8px] w-[88%] h-[90vh] py-[30px] px-[30px] text-black bg-[#FFFFFF] leading-tight focus:outline-none overflow-y-auto">
+              <p className="whitespace-pre-wrap">{detailMemo.body}</p>
             </div>
             <button
               className="ml-[30px] px-6 py-1 bg-blue-500 text-white rounded flex flex-col items-center"

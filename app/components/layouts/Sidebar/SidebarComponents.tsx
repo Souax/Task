@@ -1,29 +1,20 @@
 import { MemoType } from "@/types/types";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import DeleteButton from "../../Delete/DeleteButton";
-import { useRouter } from "next/navigation";
 
 type SidebarProps = {
   memos: MemoType[];
   showDeleteButtons: boolean;
+  onDeleteMemo: (id: string) => void;
 };
 
 const SidebarComponents = ({
-  memos: initialMemos,
+  memos,
   showDeleteButtons,
+  onDeleteMemo,
 }: SidebarProps) => {
-  const [memos, setMemos] = useState<MemoType[]>(initialMemos);
   const [selectedMemoId, setSelectedMemoId] = useState<string | null>(null);
-  const router = useRouter();
-
-  useEffect(() => {
-    setMemos(initialMemos);
-  }, [initialMemos]);
-
-  const handleDelete = (id: string) => {
-    setMemos(memos.filter((memo) => memo.id !== id));
-  };
 
   const handleMemoClick = (id: string) => {
     setSelectedMemoId(id);
@@ -51,7 +42,10 @@ const SidebarComponents = ({
               </Link>
               {showDeleteButtons && (
                 <div className="flex-shrink-0 pr-[10px]">
-                  <DeleteButton id={memo.id} onDelete={handleDelete} />
+                  <DeleteButton
+                    id={memo.id}
+                    onDelete={() => onDeleteMemo(memo.id)}
+                  />
                 </div>
               )}
             </li>

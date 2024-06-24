@@ -1,7 +1,5 @@
 "use client";
-import { deleteMemo } from "@/types/memoAPI";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 type DeleteButtonProps = {
@@ -10,17 +8,8 @@ type DeleteButtonProps = {
 };
 
 const DeleteButton = ({ id, onDelete }: DeleteButtonProps) => {
-  const router = useRouter();
-
   const handleDelete = async () => {
-    try {
-      await deleteMemo(id);
-      onDelete(id);
-      router.push("/");
-      router.refresh();
-    } catch (error) {
-      console.error("エラー:", error);
-    }
+    onDelete(id);
   };
 
   return (

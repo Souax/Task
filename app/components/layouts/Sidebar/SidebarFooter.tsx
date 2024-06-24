@@ -26,14 +26,11 @@ const SidebarFooter = ({
   };
 
   return (
-    <div className="absolute bottom-[-167px] w-full py-[10px] bg-gray-200 flex justify-end">
+    <div className="absolute bottom-[-147px] w-full py-[10px] bg-gray-200 flex justify-end">
       {isCreating ? (
         <div className="flex space-x-2">
           <button
-            onClick={() => {
-              onCreateMemo();
-              setIsCreating(false);
-            }}
+            onClick={onCreateMemo}
             className="bg-white text-blue-500 border border-blue-500 px-[20px] rounded-[8px] flex flex-col items-center"
             style={{ marginRight: "77px" }}
           >

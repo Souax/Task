@@ -20,12 +20,13 @@ const TitleEditButton = ({
 
   const handleUpdateTitle = () => {
     onUpdate(title);
+    window.location.reload();
   };
 
   return (
     <div className="flex items-center">
       <input
-        className="shadow rounded-[8px] w-[109.5vh] py-[10px] pl-[30px] text-2xl font-bold bg-[#FFFFFF]"
+        className="shadow rounded-[8px] w-[112.5vh] py-[10px] pl-[30px] text-2xl font-bold bg-[#FFFFFF]"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />

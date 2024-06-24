@@ -1,12 +1,15 @@
 "use client";
-
 import { getDetailMemo, updateMemo } from "@/types/memoAPI";
 import React, { useState, useEffect } from "react";
-import TitleEditButton from "./edit/TitleEditButton";
-import BodyEditButton from "./edit/BodyEditButton";
+import TitleEditButton from "../../components/edit/TitleEditButton";
+import BodyEditButton from "../../components/edit/BodyEditButton";
 import Image from "next/image";
 
-const MemoPage = ({ params }: { params: { id: string } }) => {
+type MemoPageProps = {
+  params: { id: string };
+};
+
+const MemoPage = ({ params }: MemoPageProps) => {
   const [detailMemo, setDetailMemo] = useState<{ title: string; body: string }>(
     { title: "", body: "" }
   );
@@ -46,7 +49,7 @@ const MemoPage = ({ params }: { params: { id: string } }) => {
   };
 
   return (
-    <div className="pt-[30px] pb-[20px] pl-[60px] pr-[30px] flex flex-col">
+    <div className="pt-[30px] pb-[0px] pl-[30px] pr-[30px] flex flex-col">
       <div className="flex justify-between items-center">
         {isEditingTitle ? (
           <TitleEditButton
@@ -59,7 +62,7 @@ const MemoPage = ({ params }: { params: { id: string } }) => {
           <>
             <h1 className="text-2xl pl-[30px] font-bold">{detailMemo.title}</h1>
             <button
-              className="mr-[19px] px-6 py-1 bg-blue-500 text-white rounded flex flex-col items-center"
+              className="mr-[22px] px-6 py-1 bg-blue-500 text-white rounded flex flex-col items-center"
               onClick={() => setIsEditingTitle(true)}
             >
               <Image src="/edit.svg" alt="Edit Icon" width={20} height={20} />

@@ -25,7 +25,7 @@ const BodyEditButton = ({
   return (
     <div className="flex items-start w-full">
       <textarea
-        className="shadow rounded-[8px] w-[88%] h-[90vh] py-[30px] px-[30px] text-black leading-tight focus:outline-none bg-[#FFFFFF]"
+        className="shadow rounded-[8px] w-[88%] h-[90vh] py-[30px] px-[30px] text-black leading-tight bg-[#FFFFFF]"
         value={body}
         onChange={(e) => setBody(e.target.value)}
       />

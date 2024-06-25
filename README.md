@@ -18,7 +18,7 @@ git clone https://github.com/Souax/Task.git
 cd next.js-task
 ```
 
-パッケージのインストールします
+パッケージをインストールします
 
 ```bash
 npm install
@@ -32,7 +32,7 @@ npm run dev:port
 
 下記のローカル環境にアクセスできれば大丈夫です
 
-- http://localhost:3001/
+http://localhost:3001/
 
 ## 開発環境
 
